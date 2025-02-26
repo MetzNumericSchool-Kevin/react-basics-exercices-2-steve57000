@@ -9,7 +9,7 @@
 
 À chaque finalisation d'exercice, fais un commit avec le titre de l'exercice.\
 Cela me permet de faire un suivi de l'avancement par exercice.\
-Egalement cela te fais pratiquer GIT, à apprendre -un peu- à faire des commits régulier de ton travail.
+Également cela te fais pratiquer GIT, à apprendre -un peu- à faire des commits régulier de ton travail.
 
 ### Exercice 0 : Le composant Section
 
@@ -76,9 +76,9 @@ Dans `App.tsx` :
 
 **Instructions** :
 
-- Refait un composant `<BienvenueAventurier />` comme dans le TP précédent
+- Refais un composant `<BienvenueAventurier />` comme dans le TP précédent
   - Affiche dans ton template JSX la propriété `children` à la place du paragraphe
-  - A l'utilisation du composant `<BienvenueAventurier></BienvenueAventurier>`, tu pourras utiliser ce template en enfant du composant :
+  - À l'utilisation du composant `<BienvenueAventurier></BienvenueAventurier>`, tu pourras utiliser ce template en enfant du composant :
 
 ```tsx
 <p>
@@ -105,7 +105,7 @@ Dans `App.tsx` :
 **Instructions** :
 
 - Créé un composant `<Inventoria>` qui reprend le template `<ul>...</ul>`
-- Dans le composant `App`, Pour afficher l'inventaire, tu auras besoin d'un état ! Revoit les exemples sur le sujet si besoin
+- Dans le composant `App`, pour afficher l'inventaire, tu auras besoin d'un état ! Revois les exemples sur le sujet si besoin
   - Pour cet état, un simple booléen suffit. Par défaut à `false`
   - Pour faire un état, on utilise la fonction `useState` qui nous provient de la librairie `react`
   - Transmet l'état d'ouverture d'Inventoria au composant `<Inventoria>`
@@ -193,7 +193,7 @@ Dans `App.tsx` :
 
 **Objectifs** :
 
-- Utiliser un formulaire pour intérargir avec les potions de la boutique
+- Utiliser un formulaire pour interagir avec les potions de la boutique
 
 **Résultat attendu** :
 
