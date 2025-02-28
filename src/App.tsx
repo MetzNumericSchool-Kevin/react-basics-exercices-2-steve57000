@@ -1,17 +1,18 @@
 import "./App.css";
+import { Section } from "./components/section.tsx";
 
 function App() {
   return (
     <div className="container p-5 mb-4 bg-body-tertiary rounded-3">
-      <section id="exercice1" className="my-5">
+      <Section id="exercice1" className="bg-primary">
         <h1>Boutique d'Archibald le Sorcier (bis repetita) 🧙‍♂️</h1>
         <p>
           Bienvenue Aventurier, ici vous pouvez acheter diverses potions
           magiques pour vos aventures !
         </p>
-      </section>
+      </Section>
 
-      <section id="exercice2" className="my-5">
+      <Section id="exercice2" className="my-5">
         <h2>Inventoria</h2>
 
         <button className="btn btn-primary">Ouvrir Inventoria</button>
@@ -23,9 +24,9 @@ function App() {
             </li>
           </ul>
         </div>
-      </section>
+      </Section>
 
-      <section id="exercice3" className="my-5">
+      <Section id="exercice3" className="my-5">
         <h2 className="mb-5">Boutique de potion</h2>
 
         <div className="row row-cols-1 row-cols-md-4 g-4">
@@ -36,9 +37,9 @@ function App() {
             </div>
           </div>
         </div>
-      </section>
+      </Section>
 
-      <section id="exercice4" className="my-5">
+      <Section id="exercice4" className="my-5">
         <h2 className="mb-5">Ajout de potions</h2>
 
         <form>
@@ -56,7 +57,7 @@ function App() {
             </div>
           </div>
         </form>
-      </section>
+      </Section>
     </div>
   );
 }
