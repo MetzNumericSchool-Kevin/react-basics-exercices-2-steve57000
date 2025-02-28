@@ -1,7 +1,9 @@
+import * as React from "react";
+
 interface SectionProps {
   id: string
   className? : string
-  children?: React.ReactNode
+  children: React.ReactNode
 }
 
 export const Section = ({id, className, children} : SectionProps) => {
