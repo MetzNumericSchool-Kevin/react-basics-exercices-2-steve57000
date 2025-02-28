@@ -1,8 +1,17 @@
 import "./App.css";
 import { Section } from "./components/Section.tsx";
 import { BienvenueAventurier } from "./components/BienvenueAventurier.tsx";
+import {useState} from "react";
+import {Inventoria} from "./components/Inventoria.tsx";
 
 function App() {
+  const [ isOpen , setOpen ] = useState(false);
+  const [ listInvotoria , setListInvotoria  ] = useState([]);
+
+  const toggle = () => setOpen(!isOpen);
+
+  const txtInventoriaOpen = isOpen ? "Fermer Inventoria" : "Ouvrir Inventoria";
+
   return (
     <div className="container p-5 mb-4 bg-body-tertiary rounded-3">
       <Section id="exercice1" className="bg-primary">
@@ -15,21 +24,19 @@ function App() {
         </BienvenueAventurier>
       </Section>
 
-      <Section id="exercice2" className="my-5">
+      <Section id="exercice2">
         <h2>Inventoria</h2>
 
-        <button className="btn btn-primary">Ouvrir Inventoria</button>
+        <button className="btn btn-primary" onClick={toggle}>
+          {txtInventoriaOpen}
+        </button>
 
         <div className="row mt-5">
-          <ul className="list-group list-group-horizontal flex-wrap">
-            <li className="list-group-item list-group-item-info">
-              Inventoria est pour le moment vide ⛺
-            </li>
-          </ul>
+          <Inventoria list={listInvotoria} isOpen={isOpen} />
         </div>
       </Section>
 
-      <Section id="exercice3" className="my-5">
+      <Section id="exercice3" >
         <h2 className="mb-5">Boutique de potion</h2>
 
         <div className="row row-cols-1 row-cols-md-4 g-4">
@@ -42,7 +49,7 @@ function App() {
         </div>
       </Section>
 
-      <Section id="exercice4" className="my-5">
+      <Section id="exercice4" >
         <h2 className="mb-5">Ajout de potions</h2>
 
         <form>
