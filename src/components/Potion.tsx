@@ -1,18 +1,16 @@
-import * as React from "react";
-
 interface PotionProps {
-  list: string[];
+  title: string;
+  onAddToInventoria: (name: string) => void;
 }
-export const Potion = ( {list} :PotionProps) => {
+
+export const Potion = ({ title, onAddToInventoria }: PotionProps) => {
   return (
     <>
-      <ul>
-        {list.map((item, index) => (
-          <li key={index} title={item}>{item}</li>
-        ))}
-      </ul>
+      <li title={title} className="potion-item">{title}</li>
       <div className="card-actions">
-        <button>Ajouter à Inventoria</button>
+        <button className="btn-add" onClick={() => onAddToInventoria(title)}>
+          Ajouter à Inventoria
+        </button>
       </div>
     </>
   );

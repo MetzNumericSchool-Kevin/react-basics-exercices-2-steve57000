@@ -5,7 +5,6 @@ interface PotionShopProps {
   children: React.ReactNode
 }
 export const PotionShop = ( {title, children} : PotionShopProps ) => {
-  // const {title} = props
 
   return (
     <>

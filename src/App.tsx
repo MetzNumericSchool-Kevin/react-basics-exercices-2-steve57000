@@ -6,12 +6,18 @@ import {useState} from "react";
 import {Inventoria} from "./components/Inventoria.tsx";
 import {PotionShop} from "./components/PotionShop.tsx";
 import {Potion} from "./components/Potion.tsx";
+import * as React from "react";
 
 function App() {
   const [ isOpen , setOpen ] = useState(false);
   const [ listInvotoria , setListInvotoria  ] = useState([]);
 
   const [potion, setPotion ] = useState(data);
+
+  const addToInventoria = (potionName: string) => {
+    setListInvotoria([...listInvotoria, potionName]);
+  };
+
   const toggle = () => setOpen(!isOpen);
 
   const txtInventoriaOpen = isOpen ? "Fermer Inventoria" : "Ouvrir Inventoria";
@@ -42,7 +48,11 @@ function App() {
 
       <Section id="exercice3" >
         <PotionShop title="Boutique de potion">
-          <Potion list={potion} />
+          <ul>
+            {potion.map((item, index) => (
+              <Potion key={index} title={item} onAddToInventoria={addToInventoria} />
+            ))}
+          </ul>
         </PotionShop>
 
       </Section>
