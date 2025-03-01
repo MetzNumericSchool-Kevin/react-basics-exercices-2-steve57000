@@ -7,7 +7,7 @@ interface SectionProps {
 }
 
 export const Section = ({id, className, children} : SectionProps) => {
-const classname = `my-5 ${className}`;
+const classname = className ? `my-5 ${className}` : "my-5";
 
   return (
     <section id={id} className={classname}>

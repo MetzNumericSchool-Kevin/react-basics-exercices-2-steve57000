@@ -10,7 +10,7 @@ export const Inventoria = ({list, isOpen} : InventoriaProps) => {
   return (
     <>
       {isOpen &&
-        <ul className="list-group list-group-horizontal flex-wrap">
+        <ul className="list-group list-group-horizontal flex-wrap  justify-content-center">
           {list.length >= 1 ? list.map((item, i) => (
             <li key={i} className="list-group-item list-group-item-info">
               {item}
