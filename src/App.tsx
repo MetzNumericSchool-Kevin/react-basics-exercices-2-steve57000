@@ -7,13 +7,20 @@ import {Inventoria} from "./components/Inventoria.tsx";
 import {PotionShop} from "./components/PotionShop.tsx";
 import {Potion} from "./components/Potion.tsx";
 import * as React from "react";
+import {NewPotionForm} from "./components/NewPotionForm.tsx";
 
 function App() {
   const [ isOpen , setOpen ] = useState(false);
   const [ listInvotoria , setListInvotoria  ] = useState([]);
 
-  const [potion, setPotion ] = useState(data);
+  const [potionList, setPotionList] = useState<string[]>(data); // Initialiser la liste des potions
 
+  // Fonction pour ajouter une potion à la liste
+  const addPotion = (newPotion: string) => {
+    if (newPotion.trim()) {
+      setPotionList([...potionList, newPotion]); // Ajoute la nouvelle potion à la liste
+    }
+  };
   const addToInventoria = (potionName: string) => {
     setListInvotoria([...listInvotoria, potionName]);
   };
@@ -49,32 +56,16 @@ function App() {
       <Section id="exercice3" >
         <PotionShop title="Boutique de potion">
           <ul>
-            {potion.map((item, index) => (
+            {potionList.map((item, index) => (
               <Potion key={index} title={item} onAddToInventoria={addToInventoria} />
             ))}
           </ul>
         </PotionShop>
-
       </Section>
 
-      <Section id="exercice4" >
+      <Section id="exercice5">
         <h2 className="mb-5">Ajout de potions</h2>
-
-        <form>
-          <div className="row">
-            <div className="col">
-              <label htmlFor="name">Nom de la potion</label>
-              <input type="text" className="form-control" id="name" />
-            </div>
-          </div>
-          <div className="row">
-            <div className="col">
-              <button className="btn btn-primary" type="submit">
-                Ajouter à la boutique
-              </button>
-            </div>
-          </div>
-        </form>
+        <NewPotionForm onAdd={addPotion} /> {/* Passer la fonction addPotion au formulaire */}
       </Section>
     </div>
   );
