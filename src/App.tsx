@@ -1,12 +1,13 @@
+import * as React from "react";
+import {useState} from "react";
 import "./App.css";
+
 import data from "./data/potion"
 import { Section } from "./components/Section.tsx";
 import { BienvenueAventurier } from "./components/BienvenueAventurier.tsx";
-import {useState} from "react";
 import {Inventoria} from "./components/Inventoria.tsx";
 import {PotionShop} from "./components/PotionShop.tsx";
 import {Potion} from "./components/Potion.tsx";
-import * as React from "react";
 import {NewPotionForm} from "./components/NewPotionForm.tsx";
 
 function App() {
